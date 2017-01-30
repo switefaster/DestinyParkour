@@ -1,0 +1,31 @@
+name: DestinyParkour
+main: io.github.switefaster.destinyparkour.DestinyParkour
+version: 1.0
+author: switefaster
+
+commands:
+  destinyparkour:
+    description: DestinyParkour common commands
+    usage: /destinyparkour <join|leave> [<ArenaName>] 
+    permission: destinyparkour.play
+    permission-message: You don't have <permission>!
+  destinyparkoursetup:
+    description: DestinyParkour setup commands
+    usage: /destinyparkoursetup <create|checkpoint|spawn|finish|lobby|save>
+    permission: destinyparkour.setup
+    permission-message: You don't have <permission>!
+  destinyparkourcontrol:
+    description: DestinyParkour control commands
+    usage: /destinyparkourcontrol <enable|disable> [<ArenaName>]
+    permission: destinyparkour.control
+    
+permissions:
+  destinyparkour.play:
+    description: DestinyParkour player permission
+    default: true
+  destinyparkour.setup:
+    description: DestinyParkour setup permission
+    default: op
+  destinyparkour.control:
+    description: DestinyParkour control permission
+    default: op
