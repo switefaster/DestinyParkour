@@ -57,19 +57,16 @@ public class SignEvents implements Listener{
 		}
 		Player player = evt.getPlayer();
 		Sign sign = (Sign)evt.getClickedBlock().getState();
-		player.sendMessage("REACHED HERE");
 		if(sign.getLine(0).equalsIgnoreCase(ChatColor.DARK_BLUE+"[Parkour]")){
 			if(!(player.hasPermission("destinyparkour.play"))){
 				player.sendMessage(plugin.getMessageHandler().getMessage("STATS.NO_PLAY_PERMISSION"));
 				evt.setCancelled(true);
-				player.sendMessage("REACHED HERE");
 				return;
 			}
 			if(plugin.getArenaManager().containsArenaName(sign.getLine(2))){
 				plugin.getGlobalPlayerManager().addPlayer(player, plugin.getArenaManager().getParkourArena(sign.getLine(2)));
 				plugin.getArenaManager().getParkourArena(sign.getLine(2)).getPlayerManager().playerJoin(evt.getPlayer());
 				plugin.getGlobalPlayerManager().getPlayerArena(evt.getPlayer()).getParkourHandler().ResetPlayer(evt.getPlayer());
-				player.sendMessage("REACHED HERE");
 			}
 		}
 	}
